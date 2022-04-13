@@ -4,8 +4,9 @@
 
 bool changeMakingBF(unsigned int C[], unsigned int Stock[], unsigned int n, unsigned int T, unsigned int usedCoins[]) {
     unsigned int compNumCoins = 0;
-    bool first = true;
     int possibleSol[n];
+    bool first = true;
+
     for(int i=0; i<n ; i++)
         possibleSol[i]=0;
 
@@ -13,9 +14,9 @@ bool changeMakingBF(unsigned int C[], unsigned int Stock[], unsigned int n, unsi
         int currentIndex = 0;
         while(possibleSol[currentIndex] == Stock[currentIndex]){
             currentIndex++;
-            if(currentIndex == 0) break;
+            if(currentIndex == n) break;
         }
-        if(currentIndex == 0) break;
+        if(currentIndex == n) break;
 
         for(int i=0; i<currentIndex; i++){
             possibleSol[i] = 0;
